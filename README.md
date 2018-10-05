@@ -1,10 +1,12 @@
 
-# Practice with Instance Variables
+# Instance Variables - Lab
 
 ## Introduction
 In this lab, we will practice using instance variables, which we use to store information about a particular instance object. We will use our `fuber` theme and create some methods that operate on our instance variables to return some valuable information about our passenger and driver instance objects.
 
 ## Objectives
+
+You will be able to:
 
 * Define instance variables
 * Describe how instance variables give objects attributes and properties
@@ -93,9 +95,6 @@ Next, let's use our list of drivers to define a method that returns the driver w
 def highest_rated_driver(drivers):
     pass
 ```
-
-## Summary
-In this lesson we saw how to define instance variables and saw how to use them in order to give our instance objects attributes and added complexity. We then saw how to define instance methods and call them on our instance objects. 
 
 ## Bonus
 
