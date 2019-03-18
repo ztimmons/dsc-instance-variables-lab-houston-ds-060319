@@ -41,7 +41,7 @@ passenger = Passenger() # assign the passenger instance
 passenger.rating = 4.9
 ```
 
-Your next challenge is to build a function to find a driver with a given name. The function should take two inputs: drivers and search_name. Drivers will be a list of driver objects (instances of the class you defnined above) and search_name will be a string for the driver name you wish to search from. The function should then return the first driver object from drivers whose name is an exact match to the search name. If there is no driver that matches the name searched for, then the function should return `None` and print a string stating "Sorry we couldn't find a driver with the name, ____! :\(" For example, if there were no results for the search name "Jack" your function should return:
+Your next challenge is to build a function to find a driver with a given name. The function should take two inputs: drivers and search_name. Drivers will be a list of driver objects (instances of the class you defnined above) and search_name will be a string for the driver name you wish to search from. The function should then return the first driver object from drivers whose name is an exact match to the search name. If there is no driver that matches the name searched for, then the function should return `None` and print a string stating "Sorry we couldn't find a driver with the name, ____! :\(" For example, if there were no results for the search name "Jack" your function should return None and print:
 
 ```python
 "Sorry we couldn't find a driver with the name, Jack! :("
@@ -54,7 +54,8 @@ def find_driver_by_name(drivers, name):
     for driver in drivers:
         if driver.name  == name:
             return driver
-    return "Sorry we couldn't fomd a driver with the name, " + name
+    print("Sorry we couldn't fomd a driver with the name, {}! :(".format(name))
+    return None
 ```
 
 
@@ -78,22 +79,29 @@ To test your function, here's some arbitrary definitions to create instances of 
 
 
 ```python
-find_driver_by_name(list_of_drivers, "jake")
+output = find_driver_by_name(list_of_drivers, "jake")
+output
+```
+
+
+
+
+    <__main__.Driver at 0x10a791f60>
+
+
+
+
+```python
+output = find_driver_by_name(list_of_drivers, "michelle")
 ```
 
 
 ```python
-find_driver_by_name(list_of_drivers, "michelle")
+output = find_driver_by_name(list_of_drivers, "allison")
+output
 ```
 
-
-```python
-find_driver_by_name(list_of_drivers, "allison")
-```
-
-    <__main__.Driver object at 0x000001B5F71685F8>
-    <__main__.Driver object at 0x000001B5F7168588>
-    Sorry we couldn't fomd a driver with the name, allison
+    Sorry we couldn't fomd a driver with the name, allison! :(
 
 
 If you've correctly coded the find driver by name function, then the first two calls should have returned Driver objects, while the third should have printed the appology statement and returned `None`. (You can further inspect the final output to verify this using the type() method which should reveal that the output is indeed a `Nonetype`; a plain call to output as written above return nonething.
