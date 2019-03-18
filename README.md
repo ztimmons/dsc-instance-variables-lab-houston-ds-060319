@@ -2,7 +2,7 @@
 # Instance Variables - Lab
 
 ## Introduction
-In this lab, we will practice using instance variables, which we use to store information about a particular instance object. We will use our `fuber` theme and create some methods that operate on our instance variables to return some valuable information about our passenger and driver instance objects.
+In this lab, you'll practice using instance variables, which you use to store information about a particular instance object. You will continue to use our `fuber` theme and create some methods that operate on our instance variables to return some valuable information about the passenger and driver instance objects.
 
 ## Objectives
 
@@ -13,7 +13,7 @@ You will be able to:
 
 ## Instructions
 
-Below, define classes for both a Driver and a Passenger -- for now just define the classes and remember to include the keyword `pass` so that we will have valid syntax for our classes.
+Below, define classes for both a Driver and a Passenger -- for now just define the classes and remember to include the keyword `pass` so that you'll have valid syntax for our classes.
 
 
 ```python
@@ -29,7 +29,7 @@ class Passenger(object):
     pass
 ```
 
-Now let's instantiate a new instance of a passenger and a new instance of a driver. Give the passenger a `rating` of `4.9` and give the driver a `miles_driven` attribute of `100,000`.
+Next, instantiate a new instance of a passenger and a new instance of a driver. Give the passenger a `rating` of `4.9` and give the driver a `miles_driven` attribute of `100,000`.
 
 
 ```python
@@ -39,12 +39,20 @@ passenger = None # assign the passenger instance
 # give the passenger instance object a 'rating' of 4.9
 ```
 
-Say we wanted to find a driver with a given name -- how would we do that? Well, we could define a function that takes in a list of driver instance objects and the name we are searching for. We'll have to check each driver instance for their name and see if it matches the one given.
+Your next challenge is to build a function to find a driver with a given name. The function should take two inputs: drivers and search_name. Drivers will be a list of driver objects (instances of the class you defnined above) and search_name will be a string for the driver name you wish to search from. The function should then return the first driver object from drivers whose name is an exact match to the search name. If there is no driver that matches the name searched for, then the function should return `None` and print a string stating "Sorry we couldn't find a driver with the name, ____! :\(" For example, if there were no results for the search name "Jack" your function should return:
 
-If there are no drivers with the name we are searching, our function should return a message telling us it couldn't find that particular driver. For example, if we are looking for a driver named 'Jack' but cannot find one, we should get the message:
 ```python
 "Sorry we couldn't find a driver with the name, Jack! :("
 ```
+
+
+```python
+def find_driver_by_name(drivers, name):
+    # write your code here
+    pass
+```
+
+To test your function, here's some arbitrary definitions to create instances of your Driver class. Run the cells below. 
 
 
 ```python
@@ -65,29 +73,36 @@ list_of_drivers = [alex_driver, michelle_driver, jake_driver, ashleigh_driver]
 
 
 ```python
-def find_driver_by_name(drivers, name):
-    # write your code here
-    pass
+output = find_driver_by_name(list_of_drivers, "jake")
+output
 ```
 
 
 ```python
-print(find_driver_by_name(list_of_drivers, "jake"))
-print(find_driver_by_name(list_of_drivers, "michelle"))
-print(find_driver_by_name(list_of_drivers, "allison"))
+output = find_driver_by_name(list_of_drivers, "michelle")
+output
 ```
 
-Cool! That looks like it worked. We can see that the method returns the Driver instance object when it finds an instance with the given name and returns a message saying that driver does not exist, if it cannot find a driver with that name. Now try writing a method that will return a list of instance objects that start with a given substring like the letter `'a'`.
+
+```python
+output = find_driver_by_name(list_of_drivers, "allison")
+output
+```
+
+If you've correctly coded the find driver by name function, then the first two calls should have returned Driver objects, while the third should have printed the appology statement and returned `None`. (You can further inspect the final output to verify this using the type() method which should reveal that the output is indeed a `Nonetype`; a plain call to output as written above return nonething.
+
+
+While perhaps moderately useful, the function as written is rather brittle. Misspelling a driver's name will lead to no results. As such, write a more general method called `name_starts_with()` that will return a list of instance objects that start with a given substring. For example, you could pass the function a substring 'a' to return all drivers whose name begins with a.
 
 
 ```python
 # write your method here that returns the list of 
-# drivers whose name starts which the letter 'a'
+# drivers whose name starts which the given substring
 def name_starts_with(drivers, substring):
     pass
 ```
 
-Next, let's use our list of drivers to define a method that returns the driver with the highest rating.
+Finally, define a method that returns the driver with the highest rating.
 
 
 ```python
@@ -98,7 +113,7 @@ def highest_rated_driver(drivers):
 
 ## Bonus
 
-Okay, now let's work on creating more complex instance objects with more interesting instance methods. Let's define a `NewDriver` class with an instance method called, `passenger_names`. Then, instantiate a new instance of the NewDriver class called `best_driver` that has the attributes `name`, `car_make`, `car_model`, `age`, and `passengers`. The `passengers` attribute will point to the list of passenger instances, which is provided below as `list_of_passengers`:
+Define a `NewDriver` class with an instance method called, `passenger_names`. Then, instantiate a new instance of the NewDriver class called `best_driver` that has the attributes `name`, `car_make`, `car_model`, `age`, and `passengers`. The `passengers` attribute will point to the list of passenger instances, which is provided below as `list_of_passengers`:
 
 
 ```python
@@ -128,7 +143,7 @@ best_driver = None # instantiate a NewDriver instance object
 # add the passengers attribute and assign it to the list_of_passengers
 ```
 
-Alright, great! Now we have some attributes on our driver that we can work with. Let's create an instance method in the Driver class called `passenger_names` which returns a list of all the passengers' names/
+Alright, great! Now you have some attributes on the driver that you can work with. Create an instance method in the Driver class called `passenger_names` which returns a list of all the passengers' names/
 Your output should look like `['alex', 'michelle', 'jake', 'ashleigh']`.
 
 
@@ -155,4 +170,4 @@ Neat -- great work!
 
 ## Summary
 
-In this lab, we practiced creating instance variables that add information to our instance objects. We then used instance methods that used and operated on these instance variables to answer questions and return information about our instance objects.
+In this lab, you practiced creating instance variables that add information to our instance objects. You then used these instance methods to return information about the instances themselves.
