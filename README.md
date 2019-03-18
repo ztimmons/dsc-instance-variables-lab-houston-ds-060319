@@ -39,7 +39,7 @@ passenger = None # assign the passenger instance
 # give the passenger instance object a 'rating' of 4.9
 ```
 
-Your next challenge is to build a function to find a driver with a given name. The function should take two inputs: drivers and search_name. Drivers will be a list of driver objects (instances of the class you defnined above) and search_name will be a string for the driver name you wish to search from. The function should then return the first driver object from drivers whose name is an exact match to the search name. If there is no driver that matches the name searched for, then the function should return `None` and print a string stating "Sorry we couldn't find a driver with the name, ____! :\(" For example, if there were no results for the search name "Jack" your function should return:
+Your next challenge is to build a function to find a driver with a given name. The function should take two inputs: drivers and search_name. Drivers will be a list of driver objects (instances of the class you defnined above) and search_name will be a string for the driver name you wish to search from. The function should then return the first driver object from drivers whose name is an exact match to the search name. If there is no driver that matches the name searched for, then the function should return `None` and print a string stating "Sorry we couldn't find a driver with the name, ____! :\(" For example, if there were no results for the search name "Jack" your function should return None and print:
 
 ```python
 "Sorry we couldn't find a driver with the name, Jack! :("
